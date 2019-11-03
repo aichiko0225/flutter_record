@@ -1,6 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_record/Widgets/page.dart';
+
+import 'Widgets/cupertino.dart';
+
+GlobalKey<ScaffoldState> _globalKey= GlobalKey();
 
 void main() => runApp(MyApp());
+
+
+class AppRoutes {
+  // ignore: non_constant_identifier_names
+  static var HOMEPAGE = "homePage_Key";
+  static var CUPERTINOPAGE = "CupertinoPage_Key";
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -8,6 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      routes: {
+        AppRoutes.HOMEPAGE: (context) => HomePage(),
+        AppRoutes.CUPERTINOPAGE: (context) => CupertinoPage(),
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -91,6 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RaisedButton(onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.HOMEPAGE);
+            }, child: Text('home'),),
+            CupertinoButton(
+              child: Text('cupertino'),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.CUPERTINOPAGE);
+              },
+            ),
             Text(
               'You have pushed the button this many times:',
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_record/Widgets/page.dart';
 
 import 'Widgets/cupertino.dart';
+import 'Widgets/textFieldPage.dart';
 
 GlobalKey<ScaffoldState> _globalKey= GlobalKey();
 
@@ -13,6 +14,8 @@ class AppRoutes {
   // ignore: non_constant_identifier_names
   static var HOMEPAGE = "homePage_Key";
   static var CUPERTINOPAGE = "CupertinoPage_Key";
+
+  static var TEXTFIELDPAGE = "TextFieldPage";
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.HOMEPAGE: (context) => HomePage(),
         AppRoutes.CUPERTINOPAGE: (context) => CupertinoPage(),
+        AppRoutes.TEXTFIELDPAGE: (context) => TextFieldPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -115,6 +119,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('cupertino'),
               onPressed: () {
                 Navigator.of(context).pushNamed(AppRoutes.CUPERTINOPAGE);
+              },
+            ),
+            CupertinoButton(
+              child: Text('textField & form'),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.TEXTFIELDPAGE);
               },
             ),
             Text(

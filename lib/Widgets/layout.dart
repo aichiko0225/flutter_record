@@ -34,6 +34,8 @@ import 'package:flutter/material.dart';
 class LayoutRoutes {
   // ignore: non_constant_identifier_names
   static var LINEAR_PAGE = "LINEAR_PAGE_Key";
+  // ignore: non_constant_identifier_names
+  static var STACK_PAGE = "STACK_PAGE_key";
 
 }
 
@@ -48,7 +50,7 @@ class LayoutPage extends StatefulWidget {
 class _LayoutPageState extends State<LayoutPage> {
 
   var _itemList = [
-    "Linear layout", "Flexible layout", "layout3", "layout4", "layout5"
+    "Linear layout", "Flexible layout", "Cascading layout", "layout4", "layout5"
   ];
 
   @override
@@ -63,7 +65,11 @@ class _LayoutPageState extends State<LayoutPage> {
       routeName = LayoutRoutes.LINEAR_PAGE;
     }
 
-    if (routeName.length > 0) {
+    if (itemIndex == 2) {
+      routeName = LayoutRoutes.STACK_PAGE;
+    }
+
+    if (routeName != null && routeName.length > 0) {
       Navigator.of(context).pushNamed(routeName);
     }
   }

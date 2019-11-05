@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_record/Widgets/page.dart';
+import 'package:flutter_record/Widgets/stackPage.dart';
 
 import 'Widgets/cupertino.dart';
 import 'Widgets/layout.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.TEXTFIELD_PAGE: (context) => TextFieldPage(),
         AppRoutes.LAYOUTS_PAGE: (context) => LayoutPage(),
         LayoutRoutes.LINEAR_PAGE: (context) => LinearPage(),
+        LayoutRoutes.STACK_PAGE: (context) => StackPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.

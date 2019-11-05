@@ -63,6 +63,60 @@ class LinearPage extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: SizedBox(
+              height: 100.0,
+              child: Flex(
+                direction: Axis.vertical,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.red,
+                    ),
+                  ),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.green,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Wrap(
+              spacing: 8.0,
+              runSpacing: 4.0,
+              alignment: WrapAlignment.start,
+              children: <Widget>[
+                Chip(
+                  avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('A')),
+                  label: Text('Hamilton'),
+                ),
+                Chip(
+                  avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('M')),
+                  label: Text('Lafayette'),
+                ),
+                Chip(
+                  avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('H')),
+                  label: Text('Mulligan'),
+                ),
+                Chip(
+                  avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('J')),
+                  label: Text('Laurens'),
+                ),
+              ],
+            ),
           )
         ],
       )

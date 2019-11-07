@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_record/Animations/Animation.dart';
 import 'package:flutter_record/Widgets/page.dart';
 import 'package:flutter_record/Widgets/stackPage.dart';
 
@@ -22,6 +23,8 @@ class AppRoutes {
   static var TEXTFIELD_PAGE = "TextFieldPage_Key";
   // ignore: non_constant_identifier_names
   static var LAYOUTS_PAGE = "LayoutPage_Key";
+  // ignore: non_constant_identifier_names
+  static var ANIMATIONS_PAGE = "ANIMATIONS_PAGE_KEY";
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +40,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.LAYOUTS_PAGE: (context) => LayoutPage(),
         LayoutRoutes.LINEAR_PAGE: (context) => LinearPage(),
         LayoutRoutes.STACK_PAGE: (context) => StackPage(),
+        AppRoutes.ANIMATIONS_PAGE: (context) => ScaleAnimationRoute(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -140,6 +144,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('layoutPage'),
               onPressed: () {
                 Navigator.of(context).pushNamed(AppRoutes.LAYOUTS_PAGE);
+              },
+            ),
+            CupertinoButton(
+              child: Text('animationPage'),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.ANIMATIONS_PAGE);
               },
             ),
             Text(

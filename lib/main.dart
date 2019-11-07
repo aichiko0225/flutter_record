@@ -1,18 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_record/Widgets/page.dart';
-
+import 'Widgets/buttonAndImage.dart';
 import 'Widgets/cupertino.dart';
 
 GlobalKey<ScaffoldState> _globalKey= GlobalKey();
 
 void main() => runApp(MyApp());
 
-
 class AppRoutes {
   // ignore: non_constant_identifier_names
-  static var HOMEPAGE = "homePage_Key";
+  static var HOMEPAGE = "HomePage_Key";
+  // ignore: non_constant_identifier_names
   static var CUPERTINOPAGE = "CupertinoPage_Key";
+  // ignore: non_constant_identifier_names
+  static var BUTTONPAGE = "ButtonPage_Key";
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.HOMEPAGE: (context) => HomePage(),
         AppRoutes.CUPERTINOPAGE: (context) => CupertinoPage(),
+        AppRoutes.BUTTONPAGE: (context) => ButtonPage(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -113,8 +116,19 @@ class _MyHomePageState extends State<MyHomePage> {
             }, child: Text('home'),),
             CupertinoButton(
               child: Text('cupertino'),
+              color: CupertinoColors.activeOrange,
+              disabledColor: CupertinoColors.extraLightBackgroundGray,
               onPressed: () {
                 Navigator.of(context).pushNamed(AppRoutes.CUPERTINOPAGE);
+              },
+            ),
+            CupertinoButton(
+              padding: EdgeInsets.all(5),
+              child: Text('button & image'),
+              color: CupertinoColors.activeBlue,
+              disabledColor: CupertinoColors.extraLightBackgroundGray,
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.BUTTONPAGE);
               },
             ),
             Text(
